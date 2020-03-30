@@ -1,0 +1,78 @@
+.global-stats {
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(184, 188, 173, 0.8);
+}
+.global-stats h1 {
+  font-size: 2.5em;
+}
+.global-stats p {
+  font-size: 1.5em;
+  margin: 5px 0;
+}
+
+.confirmed {
+  color: #f2d724;
+}
+
+.recovered {
+  color: #4bd14e;
+}
+
+.deaths {
+  color: #eb512f;
+}
+
+.country-stats {
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(184, 188, 173, 0.8);
+}
+.country-stats h1 {
+  font-size: 2.5em;
+}
+.country-stats p {
+  font-size: 1.5em;
+  margin: 5px 0;
+}
+
+input {
+  padding: 10px 8px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4bd14e;
+  border-radius: 2px;
+  font-size: 1.3em;
+  margin-left: 10px;
+  padding: 7px 10px;
+  border: none;
+}
+
+body {
+  background: url("https://images.pexels.com/photos/41949/earth-earth-at-night-night-lights-41949.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 30% 60%;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+/*# sourceMappingURL=app.css.map */

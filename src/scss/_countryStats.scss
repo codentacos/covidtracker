@@ -1,0 +1,22 @@
+@use 'variables';
+@use 'mixins';
+
+.country-stats {
+    @include mixins.stat-styles;
+    background-color: variables.$component-bg;
+}
+
+input {
+    padding: 10px 8px;
+    // background-color: rgba(255,255,255,0.5);
+    border-radius: 5px;
+}
+
+button {
+    background-color: variables.$recovered-color;
+    border-radius: 2px;
+    font-size: 1.3em;
+    margin-left: 10px;
+    padding: 7px 10px;
+    border: none;
+}

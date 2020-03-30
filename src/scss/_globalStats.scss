@@ -1,0 +1,19 @@
+@use 'variables';
+@use 'mixins';
+
+.global-stats {
+    @include mixins.stat-styles;
+    background-color: variables.$component-bg;
+}
+
+.confirmed {
+    color: variables.$confirmed-color;
+}
+
+.recovered {
+    color: variables.$recovered-color;
+}
+
+.deaths {
+    color: variables.$deaths-color;
+}
