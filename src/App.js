@@ -3,7 +3,7 @@ import './css/app.css';
 
 // Components
 import GlobalStats from './components/GlobalStats';
-import CountryStats from './components/CountryStats';
+import Container from './components/Container';
 
 class App extends Component {
 
@@ -11,7 +11,7 @@ render() {
   return (
     <div className='container'>
       <GlobalStats />
-      <CountryStats />
+      <Container />
     </div>
   );
 }

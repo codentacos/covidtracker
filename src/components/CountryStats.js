@@ -31,6 +31,7 @@ class CountryStats extends Component {
                 this.setState({
                     country: response.data[0].country,
                     confirmed: response.data[0].confirmed,
+                    critical: response.data[0].critical,
                     recovered: response.data[0].recovered,
                     deaths: response.data[0].deaths
                 });
@@ -44,12 +45,14 @@ class CountryStats extends Component {
         return (
             <div className='country-stats'>
                 <h1>Country Stats</h1>
+                <span>Searh specific countries for more information</span>
                 <Search 
                     onSearch={ this.performSearch }
                 />
                 <h2>{ this.state.country }</h2>
                 <p className='confirmed'>Confirmed: {this.state.confirmed}</p>
                 <p className='recovered'>Recovered: {this.state.recovered}</p>
+                <p className='critical'>Critical: {this.state.critical}</p>
                 <p className='deaths'>Deaths: {this.state.deaths}</p>
             </div>
         );

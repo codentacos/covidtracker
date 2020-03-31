@@ -3,7 +3,18 @@
 
 .country-stats {
     @include mixins.stat-styles;
-    background-color: variables.$component-bg;
+    // background-color: variables.$component-bg;
+    // margin: 10px;
+    height: 408px;
+    overflow: hidden;
+}
+
+h1 {
+    margin-bottom: 8px;
+}
+
+span {
+    margin-bottom: 8px;
 }
 
 input {
