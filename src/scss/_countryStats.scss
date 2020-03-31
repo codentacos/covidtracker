@@ -3,10 +3,9 @@
 
 .country-stats {
     @include mixins.stat-styles;
-    // background-color: variables.$component-bg;
-    // margin: 10px;
     height: 408px;
     overflow: hidden;
+    padding-bottom: 20px;
 }
 
 h1 {
@@ -15,19 +14,30 @@ h1 {
 
 span {
     margin-bottom: 8px;
+    text-align: center;
 }
 
 input {
+    display: block;
     padding: 10px 8px;
-    // background-color: rgba(255,255,255,0.5);
     border-radius: 5px;
+    margin: 0 auto;
+    @media (min-width: variables.$small-mobile) {
+        display: inline;
+    }
 }
 
 button {
     background-color: variables.$recovered-color;
     border-radius: 2px;
     font-size: 1.3em;
-    margin-left: 10px;
+    // margin-left: 10px;
+    display: block;
+    margin: 10px auto 0;
     padding: 7px 10px;
     border: none;
+    @media (min-width: variables.$small-mobile) {
+        display: inline;
+        margin: 0 0 0 10px;
+    }
 }

@@ -3,18 +3,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: rgba(184, 188, 173, 0.8);
 }
 .global-stats h1 {
-  font-size: 2.5em;
+  font-size: 1.8em;
 }
 .global-stats p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 5px 0;
 }
-
-.global-stats p {
-  text-align: left;
+@media (min-width: 1440px) {
+  .global-stats h1 {
+    font-size: 2.5em;
+  }
+  .global-stats p {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
 }
 
 .confirmed {
@@ -34,15 +40,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 408px;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 .country-stats h1 {
-  font-size: 2.5em;
+  font-size: 1.8em;
 }
 .country-stats p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 5px 0;
+}
+@media (min-width: 1440px) {
+  .country-stats h1 {
+    font-size: 2.5em;
+  }
+  .country-stats p {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
 }
 
 h1 {
@@ -51,20 +68,35 @@ h1 {
 
 span {
   margin-bottom: 8px;
+  text-align: center;
 }
 
 input {
+  display: block;
   padding: 10px 8px;
   border-radius: 5px;
+  margin: 0 auto;
+}
+@media (min-width: 340px) {
+  input {
+    display: inline;
+  }
 }
 
 button {
   background-color: #4bd14e;
   border-radius: 2px;
   font-size: 1.3em;
-  margin-left: 10px;
+  display: block;
+  margin: 10px auto 0;
   padding: 7px 10px;
   border: none;
+}
+@media (min-width: 340px) {
+  button {
+    display: inline;
+    margin: 0 0 0 10px;
+  }
 }
 
 .data-container {
@@ -72,14 +104,27 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 75px 1fr;
   background-color: rgba(184, 188, 173, 0.8);
 }
 .data-container h1 {
-  font-size: 2.5em;
+  font-size: 1.8em;
 }
 .data-container p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 5px 0;
+}
+@media (min-width: 1440px) {
+  .data-container h1 {
+    font-size: 2.5em;
+  }
+  .data-container p {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
 }
 .data-container ul {
   padding: 0;
@@ -95,6 +140,25 @@ button {
 }
 .data-container ul a:hover {
   color: #eb512f;
+}
+@media (min-width: 660px) {
+  .data-container {
+    overflow-y: auto;
+  }
+}
+
+.data-container::-webkit-scrollbar-track {
+  background-color: rgba(184, 188, 173, 0.8);
+}
+
+.data-container::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+.data-container::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #555555;
 }
 
 .info-container {
@@ -117,6 +181,7 @@ button {
 body {
   background: url("https://images.pexels.com/photos/41949/earth-earth-at-night-night-lights-41949.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   text-shadow: 1px 1px black;
@@ -127,7 +192,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 30% 60%;
+  grid-template-columns: 1fr;
   height: 511px;
   gap: 15px;
   justify-content: center;
@@ -136,28 +201,17 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 95%;
 }
-
-.data-container {
-  display: grid;
-  overflow-y: auto;
-  grid-template-columns: 1fr;
-  grid-template-rows: 75px 1fr;
+@media (min-width: 660px) {
+  .container {
+    grid-template-columns: 30% 60%;
+  }
 }
-
-.data-container::-webkit-scrollbar-track {
-  background-color: #F5F5F5;
-}
-
-.data-container::-webkit-scrollbar {
-  width: 10px;
-  background-color: #F5F5F5;
-}
-
-.data-container::-webkit-scrollbar-thumb {
-  background-color: #000000;
-  border: 2px solid #555555;
+@media (min-width: 1440px) {
+  .container {
+    width: 80%;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,17 +1,28 @@
+@use 'variables';
+
 @mixin stat-styles {
     border-top: 2px solid rgba(0, 0, 0, 0.7);
-    // border-radius: 5px;
-    // margin-left: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     
     h1 {
-        font-size: 2.5em;
+        font-size: 1.8em;
     }
 
     p {
-        font-size: 1.5em;
+        font-size: 1.2em;
         margin: 5px 0;
+    }
+    @media (min-width: variables.$desktop) {
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 5px 0;
+        }
     }
 }

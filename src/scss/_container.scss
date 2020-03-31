@@ -3,6 +3,10 @@
 
 .data-container {
     @include mixins.stat-styles;
+    display: grid;
+    // overflow-y: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 1fr;
     background-color: variables.$component-bg;
     ul {
         padding: 0;
@@ -19,5 +23,22 @@
             color: variables.$deaths-color;
         }
     }
+    @media (min-width: variables.$small-tablet) {
+        overflow-y: auto;
+    }
 
+}
+
+.data-container::-webkit-scrollbar-track {
+    background-color: rgba(184, 188, 173, .8);
+}
+
+.data-container::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+.data-container::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 2px solid #555555;
 }
