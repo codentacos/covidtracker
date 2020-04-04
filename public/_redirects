@@ -1,5 +1,9 @@
 #Netlify redirects
 
-/           /
-/info       /info
-/search     /search
+[[redirects]]
+from = '/info'
+to = '/info'
+
+[[redirects]]
+from = '/search'
+to = '/search'
