@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
     BrowserRouter,
     Route,
-    NavLink
+    NavLink,
+    Redirect
 } from 'react-router-dom';
 import '../css/app.css';
 
@@ -16,6 +17,7 @@ class Container extends Component {
             <BrowserRouter>
                 <div className='data-container'>
                     <ul>
+                        <Redirect from='/' to='/search' />
                         <NavLink to='/info'>What is Covid-19?</NavLink>
                         <NavLink to='/search'>Search</NavLink>
                     </ul>

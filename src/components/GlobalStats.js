@@ -19,17 +19,16 @@ class GlobalStats extends Component {
             "headers": {
                 "content-type": "application/octet-stream",
                 "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-                "x-rapidapi-key": "e7a3dfa939mshfe1928f190d1bddp189afbjsn938e9d19693b"
+                "x-rapidapi-key": process.env.REACT_APP_API_KEY,
             }, "params": {
                 "format": "undefined"
             }
         })
             .then((response) => {
-                // console.log(response);
-                this.setState({
-                    confirmed: response.data[0].confirmed,
-                    recovered: response.data[0].recovered,
-                    deaths: response.data[0].deaths
+                    this.setState({
+                        confirmed: 'Confirmed: ' + response.data[0].confirmed,
+                        recovered: 'Recovered: ' + response.data[0].recovered,
+                        deaths: 'Deaths: ' + response.data[0].deaths
                     });
             })
             .catch((error) => {
@@ -41,9 +40,9 @@ class GlobalStats extends Component {
         return (
             <div className='global-stats'>
                 <h1>Global Stats</h1>
-                <p className='confirmed'>Confirmed: {this.state.confirmed }</p>
-                <p className='recovered'>Recovered: { this.state.recovered }</p>
-                <p className='deaths'>Deaths: {this.state.deaths}</p>
+                    <p className='confirmed'>{this.state.confirmed}</p>
+                    <p className='recovered'>{this.state.recovered}</p>
+                    <p className='deaths'>{this.state.deaths}</p>
             </div>
         );
     }
