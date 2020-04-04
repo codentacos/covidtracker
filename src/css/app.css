@@ -35,6 +35,10 @@
   color: #eb512f;
 }
 
+input {
+  font-size: 16px;
+}
+
 .country-stats {
   border-top: 2px solid rgba(0, 0, 0, 0.7);
   display: flex;
@@ -61,29 +65,25 @@
     margin: 5px 0;
   }
 }
-
-h1 {
+.country-stats h1 {
   margin-bottom: 8px;
 }
-
-span {
+.country-stats span {
   margin-bottom: 8px;
   text-align: center;
 }
-
-input {
+.country-stats input {
   display: block;
   padding: 10px 8px;
   border-radius: 5px;
   margin: 0 auto;
 }
 @media (min-width: 340px) {
-  input {
+  .country-stats input {
     display: inline;
   }
 }
-
-button {
+.country-stats button {
   background-color: #4bd14e;
   border-radius: 2px;
   font-size: 1.3em;
@@ -93,7 +93,7 @@ button {
   border: none;
 }
 @media (min-width: 340px) {
-  button {
+  .country-stats button {
     display: inline;
     margin: 0 0 0 10px;
   }
