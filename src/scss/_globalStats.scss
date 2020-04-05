@@ -3,7 +3,9 @@
 
 .global-stats {
     @include mixins.stat-styles;
-    background-color: variables.$component-bg;
+    border: 1px solid variables.$component-border;
+    border-radius: 5px;
+    box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.3);
 }
 
 .confirmed {

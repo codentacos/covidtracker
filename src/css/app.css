@@ -1,10 +1,12 @@
 .global-stats {
-  border-top: 2px solid rgba(0, 0, 0, 0.7);
+  border-top: 2px dotted rgba(50, 168, 123, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(184, 188, 173, 0.8);
+  border: 1px solid rgba(50, 168, 123, 0.8);
+  border-radius: 5px;
+  box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.3);
 }
 .global-stats h1 {
   font-size: 1.8em;
@@ -40,7 +42,7 @@ input {
 }
 
 .country-stats {
-  border-top: 2px solid rgba(0, 0, 0, 0.7);
+  border-top: 2px dotted rgba(50, 168, 123, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,10 +75,12 @@ input {
   text-align: center;
 }
 .country-stats input {
+  border: 1px black solid;
   display: block;
   padding: 10px 8px;
   border-radius: 5px;
   margin: 0 auto;
+  outline: none;
 }
 @media (min-width: 340px) {
   .country-stats input {
@@ -84,13 +88,17 @@ input {
   }
 }
 .country-stats button {
-  background-color: #4bd14e;
+  background-color: #82d1b3;
   border-radius: 2px;
   font-size: 1.3em;
   display: block;
   margin: 10px auto 0;
-  padding: 7px 10px;
+  padding: 9px 10px;
   border: none;
+  outline: none;
+}
+.country-stats button:hover {
+  background-color: #73bfa2;
 }
 @media (min-width: 340px) {
   .country-stats button {
@@ -100,15 +108,17 @@ input {
 }
 
 .data-container {
-  border-top: 2px solid rgba(0, 0, 0, 0.7);
+  border-top: 2px dotted rgba(50, 168, 123, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   display: grid;
+  border: 1px solid rgba(50, 168, 123, 0.8);
+  border-radius: 5px;
   grid-template-columns: 1fr;
   grid-template-rows: 75px 1fr;
-  background-color: rgba(184, 188, 173, 0.8);
+  box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.3);
 }
 .data-container h1 {
   font-size: 1.8em;
@@ -170,6 +180,7 @@ input {
 }
 .info-container img {
   display: block;
+  filter: invert(100%);
   margin: 0 auto;
   width: 150px;
 }
@@ -179,13 +190,9 @@ input {
 }
 
 body {
-  background: url("https://images.pexels.com/photos/41949/earth-earth-at-night-night-lights-41949.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+  font-family: "Noto Sans", sans-serif;
   text-shadow: 1px 1px black;
-  height: 100vh;
   margin: 0;
   padding: 0;
 }

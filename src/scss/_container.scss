@@ -4,10 +4,13 @@
 .data-container {
     @include mixins.stat-styles;
     display: grid;
+    border: 1px solid variables.$component-border;
+    border-radius: 5px;
     // overflow-y: auto;
     grid-template-columns: 1fr;
     grid-template-rows: 75px 1fr;
-    background-color: variables.$component-bg;
+    box-shadow: -1px 0px 4px rgba(0,0,0,0.3);
+    // background-color: variables.$component-bg;
     ul {
         padding: 0;
         margin: 0 auto;
