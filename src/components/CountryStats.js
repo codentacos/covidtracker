@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-// import '.env';
+import { countries } from '../countries';
+import ClipboardIcon from './icons/ClipboardIcon';
+import PlusIcon from './icons/PlusIcon';
+import BedIcon from './icons/BedIcon';
+import CriticalIcon from './icons/CriticalIcon';
 import '../css/app.css';
 
 // Components
@@ -9,39 +13,66 @@ class CountryStats extends Component {
     constructor() {
         super();
         this.state = {
-            noData: false
+            countries: '',
+            
         }
     }
 
-    performSearch = (query) => {
+    componentDidMount() {
+        this.setState({
+            countries: countries,
+            selected: 'AF',
+            noData: true
+        });
+    }
+
+    populateOptions = countries.length > 0
+    && countries.map((item, i) => {
+        return (
+            <option key={i} value={item.code}>{item.name}</option>
+        )
+    });
+
+    handleChange = (e) => {
+        let val = e.target.value;
+
+        this.setState ((prevState) => ({
+            countries: prevState.countries,
+            selected: val
+        }));
+        console.log(e.target.value);  
+    }
+
+    performSearch = (e) => {
+        e.preventDefault();
+
         const axios = require("axios");
+        const query = this.state.selected;
+
         axios({
             "method": "GET",
-            "url": `https://covid-19-data.p.rapidapi.com/country?${query}`,
+            "url": `https://covid-19-data.p.rapidapi.com/country/code?${query}`,
             "headers": {
                 "content-type": "application/octet-stream",
                 "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
                 "x-rapidapi-key": process.env.REACT_APP_API_KEY,
             }, "params": {
-                "format": "json",
-                "name": `${query}`
+                "format": "undefined",
+                "code": `${query}`
             }
         })
             .then((response) => {
-                console.log(response.data);
-                
-                if (response.data.length === 0) {
-                    this.setState({ noData: true });
-                } else {
-                    this.setState({
-                        country: response.data[0].country,
-                        confirmed: 'Confirmed: ' + response.data[0].confirmed,
-                        critical: 'critical: ' + response.data[0].critical,
-                        recovered: 'Recovered: ' + response.data[0].recovered,
-                        deaths: 'Deaths: ' + response.data[0].deaths,
-                        noData: false
-                    });
-                }
+                console.log(response);
+                this.setState((prevState) => ({
+                    countries: prevState.countries,
+                    selected: prevState.selected,
+                    country: response.data[0].country,
+                    confirmed: 'Confirmed: ' + response.data[0].confirmed,
+                    critical: 'critical: ' + response.data[0].critical,
+                    recovered: 'Recovered: ' + response.data[0].recovered,
+                    deaths: 'Deaths: ' + response.data[0].deaths,
+                    noData: false
+                }));
             })
             .catch((error) => {
                 console.log('There has been an error fetching data: ', error)
@@ -54,25 +85,26 @@ class CountryStats extends Component {
                 <h1>Country Stats</h1>
                 <span>Search specific countries for more information</span>
                 <Search
-                    onSearch={this.performSearch}
+                    data={this.state.countries}
+                    search={this.performSearch}
+                    populateOptions={this.populateOptions}
+                    change={this.handleChange}
                 />
-
                 { (() => {
                     if (this.state.noData === true) {
-                        return <h2>There were no results. Please enter a valid country name</h2>;
+                        return <div></div>;
                     } else {
                         return (
                         <div>
-                            <h2>{this.state.country}</h2>
-                            <p className='confirmed'>{this.state.confirmed}</p>
-                            <p className='recovered'>{this.state.recovered}</p>
-                            <p className='critical'>{this.state.critical}</p>
-                            <p className='deaths'>{this.state.deaths}</p>
+                            <p className='confirmed'><ClipboardIcon />  {this.state.confirmed}</p>
+                            <p className='recovered'><PlusIcon />  {this.state.recovered}</p>
+                            <p className='critical'><CriticalIcon />  {this.state.critical}</p>
+                            <p className='deaths'><BedIcon />  {this.state.deaths}</p>
                         </div>
                         );
                     }
                 })() }
-               
+                
                 
             </div>
         );

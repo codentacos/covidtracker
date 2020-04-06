@@ -1,3 +1,18 @@
-input {
+@use 'variables';
+
+option,
+select {
     font-size: 16px;
+}
+
+select {
+    background: transparent;
+    border: 1px solid variables.$component-border;
+    display: block;
+    margin: 0 auto;
+    padding: 11px 0 10px;
+    width: 80%;
+    @media (min-width: variables.$tablet) {
+        display: inline;
+    }
 }

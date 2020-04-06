@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(50, 168, 123, 0.8);
+  border: 2px solid rgba(50, 168, 123, 0.8);
   border-radius: 5px;
   box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.3);
 }
@@ -26,19 +26,38 @@
 }
 
 .confirmed {
-  color: #f2d724;
+  color: #000;
 }
 
 .recovered {
-  color: #4bd14e;
+  color: #000;
 }
 
 .deaths {
-  color: #eb512f;
+  color: #000;
 }
 
-input {
+i {
+  color: rgba(50, 168, 123, 0.8);
+}
+
+option,
+select {
   font-size: 16px;
+}
+
+select {
+  background: transparent;
+  border: 1px solid rgba(50, 168, 123, 0.8);
+  display: block;
+  margin: 0 auto;
+  padding: 11px 0 10px;
+  width: 80%;
+}
+@media (min-width: 768px) {
+  select {
+    display: inline;
+  }
 }
 
 .country-stats {
@@ -74,25 +93,15 @@ input {
   margin-bottom: 8px;
   text-align: center;
 }
-.country-stats input {
-  border: 1px black solid;
-  display: block;
-  padding: 10px 8px;
-  border-radius: 5px;
-  margin: 0 auto;
-  outline: none;
-}
-@media (min-width: 340px) {
-  .country-stats input {
-    display: inline;
-  }
+.country-stats i {
+  color: rgba(50, 168, 123, 0.8);
 }
 .country-stats button {
   background-color: #82d1b3;
   border-radius: 2px;
   font-size: 1.3em;
   display: block;
-  margin: 10px auto 0;
+  margin: 10px auto;
   padding: 9px 10px;
   border: none;
   outline: none;
@@ -100,10 +109,10 @@ input {
 .country-stats button:hover {
   background-color: #73bfa2;
 }
-@media (min-width: 340px) {
+@media (min-width: 768px) {
   .country-stats button {
     display: inline;
-    margin: 0 0 0 10px;
+    margin-left: 10px;
   }
 }
 
@@ -114,7 +123,7 @@ input {
   align-items: center;
   justify-content: center;
   display: grid;
-  border: 1px solid rgba(50, 168, 123, 0.8);
+  border: 2px solid rgba(50, 168, 123, 0.8);
   border-radius: 5px;
   grid-template-columns: 1fr;
   grid-template-rows: 75px 1fr;
@@ -157,20 +166,6 @@ input {
   }
 }
 
-.data-container::-webkit-scrollbar-track {
-  background-color: rgba(184, 188, 173, 0.8);
-}
-
-.data-container::-webkit-scrollbar {
-  width: 10px;
-  background-color: #F5F5F5;
-}
-
-.data-container::-webkit-scrollbar-thumb {
-  background-color: #000000;
-  border: 2px solid #555555;
-}
-
 .info-container {
   align-self: start;
 }
@@ -185,14 +180,13 @@ input {
   width: 150px;
 }
 .info-container a {
-  color: wheat;
+  color: crimson;
   text-decoration: none;
 }
 
 body {
   background-color: #fff;
   font-family: "Noto Sans", sans-serif;
-  text-shadow: 1px 1px black;
   margin: 0;
   padding: 0;
 }

@@ -4,17 +4,11 @@
 @use 'countryStats';
 @use 'container';
 @use 'info';
-@use 'mediaQueries';
 
 body {
-    // background: url('https://images.pexels.com/photos/41949/earth-earth-at-night-night-lights-41949.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260') no-repeat;
-    // background-size: cover;
-    // background-attachment: fixed;
-    // box-sizing: border-box;
     background-color: #fff;
     font-family: variables.$open-sans-font;
-    text-shadow: 1px 1px black;
-    // height: 100vh;
+    // text-shadow: 1px 1px black;
     margin: 0;
     padding: 0;
 }

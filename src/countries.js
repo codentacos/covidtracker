@@ -1,4 +1,4 @@
-[
+export const countries = [
     {
         "name": "Afghanistan",
         "code": "AF"
@@ -844,7 +844,7 @@
         "code": "SY"
     },
     {
-        "name": "Taiwan, Province of China",
+        "name": "Taiwan",
         "code": "TW"
     },
     {
@@ -940,7 +940,7 @@
         "code": "VE"
     },
     {
-        "name": "Viet Nam",
+        "name": "Vietnam",
         "code": "VN"
     },
     {

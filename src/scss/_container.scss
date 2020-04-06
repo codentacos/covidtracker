@@ -4,7 +4,7 @@
 .data-container {
     @include mixins.stat-styles;
     display: grid;
-    border: 1px solid variables.$component-border;
+    border: 2px solid variables.$component-border;
     border-radius: 5px;
     // overflow-y: auto;
     grid-template-columns: 1fr;
@@ -32,16 +32,16 @@
 
 }
 
-.data-container::-webkit-scrollbar-track {
-    background-color: rgba(184, 188, 173, .8);
-}
+// .data-container::-webkit-scrollbar-track {
+//     background-color: rgba(184, 188, 173, .8);
+// }
 
-.data-container::-webkit-scrollbar {
-    width: 10px;
-    background-color: #F5F5F5;
-}
+// .data-container::-webkit-scrollbar {
+//     width: 10px;
+//     background-color: #F5F5F5;
+// }
 
-.data-container::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border: 2px solid #555555;
-}
+// .data-container::-webkit-scrollbar-thumb {
+//     background-color: #000000;
+//     border: 2px solid #555555;
+// }

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import ClipboardIcon from './icons/ClipboardIcon';
+import PlusIcon from './icons/PlusIcon';
+import BedIcon from './icons/BedIcon';
 import '../css/app.css';
 
 class GlobalStats extends Component {
@@ -40,9 +43,9 @@ class GlobalStats extends Component {
         return (
             <div className='global-stats'>
                 <h1>Global Stats</h1>
-                    <p className='confirmed'>{this.state.confirmed}</p>
-                    <p className='recovered'>{this.state.recovered}</p>
-                    <p className='deaths'>{this.state.deaths}</p>
+                    <p className='confirmed'><ClipboardIcon />  {this.state.confirmed}</p>
+                    <p className='recovered'><PlusIcon />  {this.state.recovered}</p>
+                    <p className='deaths'><BedIcon />  {this.state.deaths}</p>
             </div>
         );
     }
