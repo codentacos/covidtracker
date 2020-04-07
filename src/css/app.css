@@ -54,11 +54,6 @@ select {
   padding: 11px 0 10px;
   width: 80%;
 }
-@media (min-width: 768px) {
-  select {
-    display: inline;
-  }
-}
 
 .country-stats {
   border-top: 2px dotted rgba(50, 168, 123, 0.2);
@@ -109,7 +104,7 @@ select {
 .country-stats button:hover {
   background-color: #73bfa2;
 }
-@media (min-width: 768px) {
+@media (min-width: 775) {
   .country-stats button {
     display: inline;
     margin-left: 10px;
