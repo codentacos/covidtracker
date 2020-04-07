@@ -62,15 +62,16 @@ class CountryStats extends Component {
             }
         })
             .then((response) => {
-                console.log(response);
+                // console.log(typeof response.data[0].confirmed);
+                
                 this.setState((prevState) => ({
                     countries: prevState.countries,
                     selected: prevState.selected,
                     country: response.data[0].country,
-                    confirmed: 'Confirmed: ' + response.data[0].confirmed,
-                    critical: 'critical: ' + response.data[0].critical,
-                    recovered: 'Recovered: ' + response.data[0].recovered,
-                    deaths: 'Deaths: ' + response.data[0].deaths,
+                    confirmed: 'Confirmed: ' + response.data[0].confirmed.toLocaleString('en'),
+                    critical: 'critical: ' + response.data[0].critical.toLocaleString('en'),
+                    recovered: 'Recovered: ' + response.data[0].recovered.toLocaleString('en'),
+                    deaths: 'Deaths: ' + response.data[0].deaths.toLocaleString('en'),
                     noData: false
                 }));
             })

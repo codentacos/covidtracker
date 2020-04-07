@@ -13,39 +13,46 @@ class GlobalStats extends Component {
         }
     }
 
-    componentDidMount() {
-        const axios = require("axios");
+    callGlobal = () => {
+    const axios = require("axios");
 
-        axios({
-            "method": "GET",
-            "url": "https://covid-19-data.p.rapidapi.com/totals",
-            "headers": {
-                "content-type": "application/octet-stream",
-                "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-                "x-rapidapi-key": process.env.REACT_APP_API_KEY,
-            }, "params": {
-                "format": "undefined"
-            }
+    axios({
+        "method": "GET",
+        "url": "https://covid-19-data.p.rapidapi.com/totals",
+        "headers": {
+            "content-type": "application/octet-stream",
+            "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+            "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+        }, "params": {
+            "format": "undefined"
+        }
+    })
+        .then((response) => {
+            
+
+            this.setState({
+                confirmed: 'Confirmed: ' + parseInt(response.data[0].confirmed).toLocaleString(),
+                recovered: 'Recovered: ' + parseInt(response.data[0].recovered).toLocaleString(),
+                deaths: 'Deaths: ' + parseInt(response.data[0].deaths).toLocaleString(),
+            });
+            console.log(typeof response.data[0].confirmed);
         })
-            .then((response) => {
-                    this.setState({
-                        confirmed: 'Confirmed: ' + response.data[0].confirmed,
-                        recovered: 'Recovered: ' + response.data[0].recovered,
-                        deaths: 'Deaths: ' + response.data[0].deaths
-                    });
-            })
-            .catch((error) => {
-                console.log('There was an error fetching data: ', error)
-            })
+        .catch((error) => {
+            console.log('There was an error fetching data: ', error)
+        })
+    }
+
+    componentDidMount() {
+       this.callGlobal();
     }
 
     render() {
         return (
             <div className='global-stats'>
                 <h1>Global Stats</h1>
-                    <p className='confirmed'><ClipboardIcon />  {this.state.confirmed}</p>
-                    <p className='recovered'><PlusIcon />  {this.state.recovered}</p>
-                    <p className='deaths'><BedIcon />  {this.state.deaths}</p>
+                <p className='confirmed'><ClipboardIcon />  {this.state.confirmed}</p>
+                <p className='recovered'><PlusIcon />  {this.state.recovered}</p>
+                <p className='deaths'><BedIcon />  {this.state.deaths}</p>
             </div>
         );
     }
