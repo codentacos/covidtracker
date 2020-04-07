@@ -8,7 +8,6 @@
 body {
     background-color: #fff;
     font-family: variables.$open-sans-font;
-    // text-shadow: 1px 1px black;
     margin: 0;
     padding: 0;
 }
@@ -16,20 +15,71 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    height: 511px;
+    grid-template-rows: 1fr 50px 50px;
+    grid-template-areas:
+        'one'
+        'two'
+        'three';
+    height: 100vh;
+
+    @media(min-width: variables.$small-tablet) {
+        grid-template-rows: 50px 1fr 50px;
+    }
+
+    .coffee {
+        grid-area: 'two';
+        margin: 0 auto;
+        height: 51px;
+        width: 51px;
+        @media(min-width: variables.$small-tablet) {
+            grid-area: one;
+            margin: 8px 8px 0 auto;
+        }
+    }
+
+    .coffee button {
+        background: transparent;
+        border: none;
+        outline: none;
+        height: 51px;
+        width: 51px;
+    }
+
+    .coffee-btn {
+        background: variables.$component-border;
+        border-radius: 5px;
+        display: block;
+        margin: 10px auto;
+        height: 51px;
+        width: 51px;
+
+        @media(min-width: variables.$small-tablet) {
+            margin: 0 0 0 auto;
+        }
+    }
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 15px;
+    grid-area: 'two';
     justify-content: center;
     padding-top: 15px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 95%;
 
     @media (min-width: variables.$small-tablet) {
         grid-template-columns: 30% 60%;
+        margin: auto;
+        width: 95%;
     }
+
     @media (min-width: variables.$desktop) {
         width: 80%;
     }
+}
+
+.footer {
+    grid-area: 'three';
+    margin: auto auto 8px;
 }

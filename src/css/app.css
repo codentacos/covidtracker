@@ -51,7 +51,7 @@ select {
   border: 1px solid rgba(50, 168, 123, 0.8);
   display: block;
   margin: 0 auto;
-  padding: 11px 0 10px;
+  padding: 11px 0 10px 5px;
   width: 80%;
 }
 
@@ -155,7 +155,7 @@ select {
 .data-container ul a:hover {
   color: #eb512f;
 }
-@media (min-width: 660px) {
+@media (min-width: 674px) {
   .data-container {
     overflow-y: auto;
   }
@@ -189,25 +189,73 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  height: 511px;
+  grid-template-rows: 1fr 50px 50px;
+  grid-template-areas: "one" "two" "three";
+  height: 100vh;
+}
+@media (min-width: 674px) {
+  .container {
+    grid-template-rows: 50px 1fr 50px;
+  }
+}
+.container .coffee {
+  grid-area: "two";
+  margin: 0 auto;
+  height: 51px;
+  width: 51px;
+}
+@media (min-width: 674px) {
+  .container .coffee {
+    grid-area: one;
+    margin: 8px 8px 0 auto;
+  }
+}
+.container .coffee button {
+  background: transparent;
+  border: none;
+  outline: none;
+  height: 51px;
+  width: 51px;
+}
+.container .coffee-btn {
+  background: rgba(50, 168, 123, 0.8);
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto;
+  height: 51px;
+  width: 51px;
+}
+@media (min-width: 674px) {
+  .container .coffee-btn {
+    margin: 0 0 0 auto;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   gap: 15px;
+  grid-area: "two";
   justify-content: center;
   padding-top: 15px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%;
 }
-@media (min-width: 660px) {
-  .container {
+@media (min-width: 674px) {
+  .wrapper {
     grid-template-columns: 30% 60%;
+    margin: auto;
+    width: 95%;
   }
 }
 @media (min-width: 1440px) {
-  .container {
+  .wrapper {
     width: 80%;
   }
+}
+
+.footer {
+  grid-area: "three";
+  margin: auto auto 8px;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -24,8 +24,6 @@ class Container extends Component {
                     <Route path='/search'><CountryStats /></Route>
                     <Route path='/info'><Info /></Route>
                 </div>
-
-                
             </BrowserRouter>
         );
     }
