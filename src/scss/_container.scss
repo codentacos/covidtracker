@@ -7,8 +7,14 @@
     border: 2px solid variables.$component-border;
     border-radius: 5px;
     grid-template-columns: 1fr;
+    // grid-template-rows: 75px 483px;
     grid-template-rows: 75px 1fr;
+    // overflow-y: auto;
     box-shadow: -1px 0px 4px rgba(0,0,0,0.3);
+    @media (min-width: variables.$small-tablet) {
+        grid-template-rows: 75px 483px;
+        overflow-y: auto;
+    }
     ul {
         padding: 0;
         margin: 0 auto;
