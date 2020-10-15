@@ -28,8 +28,6 @@ class GlobalStats extends Component {
         }
     })
         .then((response) => {
-            
-
             this.setState({
                 confirmed: 'Confirmed: ' + parseInt(response.data[0].confirmed).toLocaleString(),
                 recovered: 'Recovered: ' + parseInt(response.data[0].recovered).toLocaleString(),
