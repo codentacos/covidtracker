@@ -1,6 +1,6 @@
 import React from 'react';
 import Heart from './icons/Heart';
-import { Container, Navbar } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 
 const Footer = () => {
     return (
