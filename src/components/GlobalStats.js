@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ClipboardIcon from './icons/ClipboardIcon';
 import PlusIcon from './icons/PlusIcon';
 import BedIcon from './icons/BedIcon';
-import CoffeeButton from './CoffeeButton'
 import '../css/app.css';
 
 class GlobalStats extends Component {
