@@ -11,12 +11,12 @@ import '../css/app.css';
 import CountryStats from './CountryStats';
 import Info from './Info';
 
-class Container extends Component {
+class StatContainer extends Component {
     render() {
         return(
             <BrowserRouter>
                 <div className='data-container'>
-                    <ul>
+                    <ul className='text-center'>
                         <Redirect from='/' to='/search' />
                         <NavLink to='/info'>What is Covid-19?</NavLink>
                         <NavLink to='/search'>Search</NavLink>
@@ -29,4 +29,4 @@ class Container extends Component {
     }
 }
 
-export default Container;
+export default StatContainer;
