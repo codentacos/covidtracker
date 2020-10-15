@@ -1,13 +1,12 @@
 import React from 'react';
 import Heart from './icons/Heart';
-import CoffeeButton from './CoffeeButton';
+import { Container, Navbar } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <div className='footer'>
-            {/* <CoffeeButton /> */}
+        <Navbar bg='light' fixed='bottom' className='justify-content-center' >
             <span>Made with <Heart /> by Zachary Nelson</span>
-        </div>
+        </Navbar>
     );
 }
 

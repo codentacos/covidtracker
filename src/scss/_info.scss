@@ -9,7 +9,8 @@
         display: block;
         filter: invert(100%);
         margin: 0 auto;
-        width: 150px;
+        // width: 100%;
+        max-width: 150px;
     }
     a {
         color: crimson;

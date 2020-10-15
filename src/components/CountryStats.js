@@ -82,7 +82,7 @@ class CountryStats extends Component {
 
     render() {
         return (
-            <div className='country-stats'>
+            <div className='country-stats text-center'>
                 <h1>Country Stats</h1>
                 <span>Search specific countries for more information</span>
                 <Search

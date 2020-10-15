@@ -49,9 +49,9 @@ class GlobalStats extends Component {
 
     render() {
         return (
-            <div className='global-stats'>
-                <h1>Global Stats</h1>
-                <div>
+            <div className='global-stats p-3'>
+                <h1 className='text-center'>Global Stats</h1>
+                <div className='text-center'>
                     <p className='confirmed'><ClipboardIcon />  {this.state.confirmed}</p>
                     <p className='recovered'><PlusIcon />  {this.state.recovered}</p>
                     <p className='deaths'><BedIcon />  {this.state.deaths}</p>

@@ -17,7 +17,8 @@
         color: variables.$icon-color;
     }
     button {
-        background-color: rgb(130, 209, 179);
+        // background-color: rgb(130, 209, 179);
+        background-color: rgba(255, 107, 117, 0.6);
         border-radius: 2px;
         font-size: 1.3em;
         display: block;
@@ -26,7 +27,8 @@
         border: none;
         outline: none;
         &:hover {
-            background-color: rgb(115, 191, 162);
+            background-color: rgb(255, 107, 117);
+            transition: 0.2s;
         }
         @media (min-width: variables.$tablet) {
             display: inline;
