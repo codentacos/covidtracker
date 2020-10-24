@@ -33,6 +33,7 @@ class CountryStats extends Component {
         )
     });
 
+    // handleChange is passed to the search form to update current selected country value
     handleChange = (e) => {
         let val = e.target.value;
 
