@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-
-// import { connect, Provider } from 'react-redux';
+import { connect, Provider } from 'react-redux';
+import store from '../src/store/store.js';
 import { Container, Row, Col, Navbar } from 'react-bootstrap';
 import './css/app.css';
-// import store from './store/store';
 
 // Components
 import GlobalStats from './components/GlobalStats';
@@ -13,7 +12,7 @@ import Footer from './components/Footer';
 class App extends Component {
   render() {
     return (
-      // <Provider store={store}>
+      <Provider store={store}>
         <Container fluid className='p-0'>
           <Navbar bg='light' variant='light' className='d-flex justify-content-center'>
             <Navbar.Brand>Covid-19 Tracker</Navbar.Brand>
@@ -39,8 +38,9 @@ class App extends Component {
             </Row>
           </Container>
         </Container>
-      // </Provider>
+      </Provider>
     );
   }
 }
+connect()(App);
 export default App;

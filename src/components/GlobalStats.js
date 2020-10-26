@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-// import ClipboardIcon from './icons/ClipboardIcon';
+import ClipboardIcon from './icons/ClipboardIcon';
 // import PlusIcon from './icons/PlusIcon';
 // import BedIcon from './icons/BedIcon';
 // import redux from 'redux';
-import { connect, Provider } from 'react-redux';
-import store from '../store/store.js';
 import '../css/app.css';
 
 const mapStateToProps = (store) => {
@@ -46,28 +44,24 @@ const GlobalStats = () => {
   //     }
   // }
 
-
-
   // componentDidMount() {
   // this.callGlobal();
   // }
 
   // render() {
   return (
-    <Provider store={store}>
-      <div className='global-stats p-3'>
-        <h1 className='text-center'>Global Stats</h1>
-        <div className='text-center'>
-          {/* <p className='confirmed'><ClipboardIcon />  {this.state.confirmed}</p>
-                <p className='recovered'><PlusIcon />  {this.state.recovered}</p>
-                <p className='deaths'><BedIcon />  {this.state.deaths}</p> */}
-        </div>
-        {/* <CoffeeButton /> */}
+    <div className='global-stats p-3'>
+      <h1 className='text-center'>Global Stats</h1>
+      <div className='text-center'>
+        {/* <p className='confirmed'><ClipboardIcon />  {store.globalStats.confirmed}</p> */}
+        {/* <p className='recovered'><PlusIcon />  {this.state.recovered}</p>
+          <p className='deaths'><BedIcon />  {this.state.deaths}</p> */}
       </div>
-    </Provider>
+      {/* <CoffeeButton /> */}
+    </div>
   );
 }
 
-connect()(GlobalStats);
-connect(mapStateToProps)(GlobalStats);
+// connect()(GlobalStats);
+// connect(mapStateToProps)(GlobalStats);
 export default GlobalStats;
